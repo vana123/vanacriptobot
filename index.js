@@ -10,7 +10,7 @@ bot.use(stage.middleware())
 bot.hears('begin', ctx => {
     ctx.scene.enter('mainTiker')
 })
-// fasdfa 
+
 bot.command('/start', ctx => {
     ctx.reply(`hi ${ctx.message.from.username}`)
     const keyboard = Keyboard.make([
