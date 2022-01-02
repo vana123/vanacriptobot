@@ -1,0 +1,21 @@
+{
+  "name": "bto1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "vana savych",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "crypto-price": "0.0.6",
+    "node-binance-api": "^0.13.1",
+    "telegraf": "^4.4.2",
+    "telegram-keyboard": "^2.3.0"
+  }
+}
