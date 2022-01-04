@@ -5,12 +5,15 @@ const bot = new Telegraf(bot_token)
 const {mainTiker} = require('./scenes/mainTiker')
 
 const stage = new Stage([mainTiker])
+
 bot.use(session())
 bot.use(stage.middleware())
 bot.hears('begin', ctx => {
     ctx.scene.enter('mainTiker')
 })
-
+// bot.on('callback_query', ctx => {
+//     console.log(ctx.callbackQuery.data == 'action1');
+// })
 bot.command('/start', ctx => {
     ctx.reply(`hi ${ctx.message.from.username}`)
     const keyboard = Keyboard.make([
@@ -18,6 +21,6 @@ bot.command('/start', ctx => {
     ])
     ctx.reply('let started', keyboard.reply())
 })
-// bot.command('/freeText', ctx => ctx.scene.enter('freeText'))
+
 bot.command('/mainTiker', ctx => ctx.scene.enter('mainTiker'))
 bot.launch()
